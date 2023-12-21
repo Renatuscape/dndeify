@@ -34,7 +34,7 @@ function SpellFinder() {
 
     return <div className="spell-finder">
         <NameFilter returnFilteredData={setFilteredSpells} dataList={spells} />
-        <LevelFilter returnFilteredData={setFilteredSpells} dataList={filteredSpells}/>
+        <LevelFilter returnFilteredData={setFilteredSpells} dataList={spells}/>
 
         {filteredSpells.map((dataEntry, index) => (
             <p key={dataEntry.index + index}>{dataEntry.name} (lv{dataEntry.level})</p>
