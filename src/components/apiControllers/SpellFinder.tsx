@@ -49,7 +49,15 @@ function SpellFinder() {
     function FavouriteSpells() {
         return <div className="resultbox">
             {spells.filter((s) => s.isFavourite === true).map((dataEntry, index) => (
-                <p className="resultbox-element" key={dataEntry.index + index}><button className="data-entry-button">{dataEntry.name} (lv{dataEntry.level})</button> <button onClick={() => setFavSpell(dataEntry)}>{dataEntry.isFavourite ? "Unfavourite" : "Favourite"}</button></p>
+                <p className="resultbox-element"
+                    key={dataEntry.index + index}>
+                    <button className="data-entry-button">
+                        {dataEntry.name} (lv{dataEntry.level})
+                    </button>
+                    <button className="fav-button" onClick={() => setFavSpell(dataEntry)}>
+                        {dataEntry.isFavourite ? "★" : "☆"}
+                    </button>
+                </p>
             ))}
         </div>
     }
@@ -66,8 +74,11 @@ function SpellFinder() {
 
         {!showFavList &&
             <div className="resultbox">{filteredSpells.map((dataEntry, index) => (
-                <p className="resultbox-element" key={dataEntry.index + index}>{dataEntry.name} (lv{dataEntry.level})
-                    <button onClick={() => setFavSpell(dataEntry)}>{dataEntry.isFavourite ? "Unfavourite" : "Favourite"}</button>
+                <p className="resultbox-element" key={dataEntry.index + index}>
+                    <button className="data-entry-button">
+                        {dataEntry.name} (lv{dataEntry.level})
+                    </button>
+                    <button className="fav-button" onClick={() => setFavSpell(dataEntry)}>{dataEntry.isFavourite ? "★" : "☆"}</button>
                 </p>
             ))}
                 {filteredSpells.length < 1 && <p>No result.</p>}</div>}

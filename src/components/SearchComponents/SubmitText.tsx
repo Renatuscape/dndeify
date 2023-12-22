@@ -7,13 +7,13 @@ interface ControlledTextFieldProps {
 
 function ControlledTextField({ inputValue, onChangeMethod, onClickMethod, buttonLabel: fieldLabel }: ControlledTextFieldProps) {
     return <div className="finderbox-element">
-        <input
+        <input className="finderbox-input"
             type="text" //designates type of input. Also set type in useState
             id="inputValue"
             value={inputValue} //links field to useState and updates value displayed
             onChange={onChangeMethod}
             placeholder="Find all" />
-        <button onClick={onClickMethod}>{fieldLabel}</button>
+        <button className="finderbox-button" onClick={onClickMethod}>{fieldLabel}</button>
     </div>
 }
 
