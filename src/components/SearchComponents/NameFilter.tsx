@@ -33,9 +33,7 @@ function NameFilter<T extends NamedItem>(props: NameFilterProps<T>) {
     }
 
     return <>
-        <div id="find-field">
             <SubmitText buttonLabel="Search Name" inputValue={searchTerm} onClickMethod={onClickSearch} onChangeMethod={handleInputChange}/>
-        </div>
     </>
 }
 export default NameFilter;
