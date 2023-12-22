@@ -65,23 +65,19 @@ button {
 
 .finderbox input,
 .finderbox button {
-  width: 50%;
   height: 40px;
   margin: none;
   padding: 5px;
-  flex-grow: 4;
   border-radius: 7px;
   border: none;
   min-height: 100%;
 }
 
-
-.finderbox input {
-  width: 60%;
+.finderbox .finderbox-input{
+width: 70%;
 }
-
-.finderbox button {
-  width: 35%;
+.finderbox .finderbox-button{
+  width: 30%;
 }
 
 .resultbox {
@@ -94,7 +90,7 @@ button {
 
 .resultbox .resultbox-element {
   flex-grow: 1;
-  height: 65px;
+min-height: 40px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -110,8 +106,19 @@ button {
 }
 
 .data-entry-button{
+  flex-grow: 3;
   text-align: left;
   background-color: transparent;
+}
+
+.fav-button{
+  width: 40px;
+  height: 40px;
+  color: rgb(168, 128, 27);
+  font-size: 125%;
+  flex-grow: 0;
+  padding:0;
+  margin: 0;
 }
 
 .data-entry-button:hover{
