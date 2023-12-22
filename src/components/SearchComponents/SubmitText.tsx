@@ -6,7 +6,7 @@ interface ControlledTextFieldProps {
 }
 
 function ControlledTextField({ inputValue, onChangeMethod, onClickMethod, buttonLabel: fieldLabel }: ControlledTextFieldProps) {
-    return <div>
+    return <div className="finderbox-element">
         <input
             type="text" //designates type of input. Also set type in useState
             id="inputValue"
