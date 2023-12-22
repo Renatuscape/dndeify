@@ -7,6 +7,8 @@ interface LevelItem {
 }
 
 interface LevelFilterProps<T extends LevelItem> {
+    minValue?: number;
+    maxValue?: number;
     dataList: T[];
     returnFilteredData: React.Dispatch<React.SetStateAction<T[]>>;
 }
@@ -32,9 +34,14 @@ function LevelFilter<T extends LevelItem>(props: LevelFilterProps<T>) {
         handleFilter();
     }
     return <>
-        <div id="find-field">
-            <SubmitNumber buttonLabel="Search Level" inputValue={searchTerm} onClickMethod={onClickSearch} onChangeMethod={handleInputChange}/>
-        </div>
+            <SubmitNumber
+            buttonLabel="Search Level"
+            inputValue={searchTerm}
+            onClickMethod={onClickSearch}
+            onChangeMethod={handleInputChange}
+            {...(props.minValue !== undefined && { minValue: props.minValue })}
+            {...(props.maxValue !== undefined && { maxValue: props.maxValue })}
+            />
     </>
 }
 export default LevelFilter;
